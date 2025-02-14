@@ -9,13 +9,16 @@
 body {
     margin: 0;
     padding: 0;
-    background: url("../Images/Bg\ image.webp") no-repeat center center fixed;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../Images/Bg\ image.webp") no-repeat center center fixed;
     background-size: cover;
 }
 
+body::before {
+    display: none; /* Removes unnecessary dark overlay */
+}
 /* Navbar */
 nav {
-    background: #04914f;
+    background: #004d00;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -274,3 +277,14 @@ body::before {
     color: white;
 }
 
+.register-container{
+    width: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
