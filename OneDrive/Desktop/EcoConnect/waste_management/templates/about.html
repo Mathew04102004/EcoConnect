@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="about" class="about-section">
+    <div class="container">
+        <h2>About <span style="color: #28a745;">EcoConnect</span></h2>
+        
+        <p>
+            At <strong>EcoConnect</strong>, we are committed to creating a <strong>cleaner and more sustainable future</strong> 
+            by revolutionizing waste management. Our platform provides an <strong>easy and efficient</strong> way for individuals 
+            and communities to schedule waste pickups, track their disposal process, and contribute to a greener planet.
+        
+        </p>
+
+        <h3>🌍 Our Mission</h3>
+        <p>
+            We aim to <strong>reduce waste pollution</strong> by connecting households, businesses, and waste collectors 
+            through a seamless and eco-friendly digital platform. Our goal is to promote <strong>responsible waste disposal</strong> 
+            while encouraging <strong>recycling and sustainability</strong> initiatives.
+        </p>
+
+        <h3>🔹 Why Choose EcoConnect?</h3>
+        <ul class="features">
+            <li>✅ <strong>Easy Scheduling:</strong> Book waste pickups with just a few clicks.</li>
+            <li>✅ <strong>Real-Time Tracking:</strong> Stay updated on your waste collection status.</li>
+            <li>✅ <strong>Eco-Friendly Approach:</strong> Encourage recycling and responsible disposal.</li>
+            <li>✅ <strong>Community Impact:</strong> Join hands with local organizations for a greener tomorrow.</li>
+        </ul>
+
+        <h3>🌟 Join the Movement!</h3>
+        <p>
+            Be a part of the solution! <strong>Sign up today</strong> and contribute to a cleaner environment. 
+            Every action counts, and together, we can make a difference! ♻️💚
+        </p>
+
+
+        <a href="{% url 'create_account' %}" class="btn btn-success">Join Us</a>
+    </div>
+</section>
+
+{% endblock %}

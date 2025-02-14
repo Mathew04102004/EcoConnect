@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <p>Join us in transforming waste into worth. Sign in to continue your journey with Eco Connect.</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn primary">Sign In</button>
+            <p class="signup-link">Don't have an account? <a href="{% url 'create_account' %}">Sign Up</a></p>
+        </form>
+        <div class="eco-message">
+            <p><strong>Every login makes a difference.</strong> Together, we can make the planet greener!</p>
+        </div>
+    </div>
+{% endblock %}

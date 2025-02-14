@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Track Your Pickups</h2>
+    <ul>
+        {% for pickup in pickups %}
+            <li>{{ pickup.date }} - {{ pickup.status }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
