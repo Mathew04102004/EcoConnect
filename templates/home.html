@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- About Us -->
+<section class="section" id="about">
+    <h2>About Us</h2>
+    <p>EcoConnect is dedicated to a cleaner environment by managing waste efficiently.</p>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-card">
+            <h3>Schedule Pickup</h3>
+            <p>Book waste pickup from your home.</p>
+        </div>
+        <div class="service-card">
+            <h3>Track Pickup</h3>
+            <p>Monitor your scheduled pickups.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button>Send Message</button>
+</section>
+
+{% endblock %}

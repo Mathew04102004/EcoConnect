@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Include Flatpickr CSS and JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<div class="schedule-container">
+    <h2>Schedule a Waste Pickup</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p class="success-message">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="waste_type">Type of Waste:</label>
+        <select id="waste_type" name="waste_type" required>
+            <option value="plastic">Plastic</option>
+            <option value="organic">Organic</option>
+            <option value="e-waste">E-Waste</option>
+            <option value="glass">Glass</option>
+            <option value="metal">Metal</option>
+        </select>
+
+        <label for="pickup_date">Pickup Date:</label>
+        <input type="text" id="pickup_date" name="pickup_date" placeholder="Select a Date" required>
+
+        <label for="pickup_time">Pickup Time:</label>
+        <input type="time" id="pickup_time" name="pickup_time" required>
+
+        <label for="address">Pickup Address:</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+        <button type="submit">Schedule Pickup</button>
+    </form>
+</div>
+
+<script>
+    flatpickr("#pickup_date", {
+        enableTime: false,
+        dateFormat: "Y-m-d",
+        minDate: "today",
+    });
+</script>
+{% endblock %}

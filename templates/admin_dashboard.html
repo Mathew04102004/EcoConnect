@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<table>
+    <tr>
+        <th>User</th>
+        <th>Address</th>
+        <th>Waste Type</th>
+        <th>Pickup Date</th>
+        <th>Status</th>
+    </tr>
+    {% for pickup in pickups %}
+    <tr>
+        <td>{{ pickup.user.username }}</td>
+        <td>{{ pickup.address }}</td>
+        <td>{{ pickup.waste_type }}</td>
+        <td>{{ pickup.scheduled_date }}</td>
+        <td>{{ pickup.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
