@@ -1,4 +1,5 @@
 /* General Styling */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@
 
 body {
     margin: 0;
+    height: 100%;
     padding: 0;
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../Images/5c0b48fc151623da67c84f6d450b544a.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -98,7 +100,7 @@ nav {
 .hero h1, .hero p {
     position: relative;
     z-index: 2;  /* Keep text above the background */
-    color: white;
+    color: black;
     text-align: center;
 }
 /* Section Styling */
@@ -112,24 +114,23 @@ nav {
 
 .section h2 {
     font-size: 30px;
-    color: white;
+    color: green;
 }
 
  .section p {
     font-size: 18px;
-    color: black;
+    color: green;
     max-width: 800px;
     margin: 10px auto;
 }
 .section .list{
-    color: white;
+    color: green;
 }
 
 /* Services Section */
 .services {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
@@ -140,20 +141,29 @@ nav {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    transition: 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
 .service-card:hover {
     transform: scale(1.05);
 }
 
+.service-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
 .service-card h3 {
-    margin: 10px 0;
+    font-size: 22px;
+    color: green;
 }
 
 .service-card p {
+    font-size: 16px;
     color: #555;
 }
+
 .section, .hero {
     position: relative !important;
     z-index: 10 !important;
@@ -167,43 +177,52 @@ nav {
     text-align: center;
 }
 
-.contact input,
-.contact textarea {
-    width: 60%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* Contact Page Styling */
+.contact-info {
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-.contact button {
-    background: #004d40;
+.contact-info p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    background-color: #28a745;
     color: white;
-    padding: 10px 20px;
+    padding: 12px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s;
 }
 
-.contact button:hover {
-    background: #00332a;
+.contact-form button:hover {
+    background-color: #218838;
 }
+
 
 /* Footer */
 .main-content {
-    flex: 1; /* Pushes footer to the bottom */
+    flex-grow: 1; 
 }
 footer {
     background: #004d00;
     color: white;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    width: 100%;   
+    
 }
 body::before {
     content: "";
@@ -225,6 +244,17 @@ body::before {
 .logo{
     color: white;
     font-size: 30px;
+}
+.content-container {
+    max-width: 800px; /* Same width as login box */
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto; /* Centers the container */
+    text-align: center;
+    flex-grow: 1;
 }
 
 /* Centering the login container */
@@ -275,7 +305,7 @@ body::before {
 }
 
 .about-section{
-    color: white;
+    color: black;
 }
 
 .register-container{
@@ -339,7 +369,7 @@ body::before {
 .create-account-container button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: green;
     color: white;
     border: none;
     border-radius: 5px;
@@ -347,9 +377,16 @@ body::before {
     cursor: pointer;
     transition: 0.3s;
 }
-
+.create-account-container input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 .create-account-container button:hover {
-    background-color: #0056b3;
+    background-color: green;
 }
 
 /* Error messages */
@@ -368,7 +405,7 @@ body::before {
 }
 
 .create-account-container a {
-    color: #007bff;
+    color: green;
     text-decoration: none;
 }
 
@@ -417,7 +454,7 @@ body::before {
 .schedule-container button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background-color: green;
     color: white;
     border: none;
     border-radius: 5px;
@@ -427,7 +464,7 @@ body::before {
 }
 
 .schedule-container button:hover {
-    background-color: #0056b3;
+    background-color: green;
 }
 
 /* Success message */
@@ -451,4 +488,320 @@ body::before {
         width: 90%;
         padding: 20px;
     }
+}
+main {
+    flex-grow: 1;
+}
+
+/* Dashboard Styling */
+.dashboard-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 25px;
+    background: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dashboard-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dashboard-buttons .btn {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: green;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: green;
+}
+
+.btn-secondary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+}
+
+/* Schedule Table Styling */
+.schedules-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: green;
+    color: white;
+}
+
+.schedule-table .pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+.schedule-table .completed {
+    background-color: #28a745;
+    color: white;
+}
+.content-container{
+    color: green !important;
+}
+.cancel-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.cancel-btn:hover {
+    background-color: darkred;
+}
+
+/* Admin Portal Styling */
+.admin-portal-container {
+    max-width: 90%;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-portal-heading {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+.admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-data-table th, .admin-data-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.admin-table-header {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Status Badges */
+.admin-status-badge {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.bg-primary { background-color: #007bff !important; color: white; }
+.bg-success { background-color: #28a745 !important; color: white; }
+.bg-danger { background-color: #dc3545 !important; color: white; }
+.bg-secondary { background-color: #6c757d !important; color: white; }
+
+/* No Pickups Message */
+.admin-no-pickups {
+    font-style: italic;
+    color: gray;
+}
+
+/* Logout Button */
+.admin-logout-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.admin-logout-btn:hover {
+    background: #b52b3d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-portal-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .admin-data-table th, .admin-data-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .admin-portal-heading {
+        font-size: 24px;
+    }
+
+    .admin-logout-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
+/* Staff Portal Styles */
+.staff-portal-container {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.staff-portal-heading {
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.staff-contact {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.assigned-pickups-heading {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.staff-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.staff-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.staff-data-table th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.staff-data-table th, .staff-data-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.staff-data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.status-badge {
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.bg-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.bg-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.bg-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.bg-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.no-pickups-message {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    padding: 15px;
+}
+
+.logout-btn-container {
+    margin-top: 20px;
+}
+
+.staff-logout-btn {
+    display: inline-block;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.staff-logout-btn:hover {
+    background-color: #e60000;
 }

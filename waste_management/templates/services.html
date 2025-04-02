@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<section class="section">
+<div class="content-container">
     <h2>Our Services</h2>
-    <p>We offer waste pickup and tracking services.</p>
-</section>
+    <p>EcoConnect provides seamless waste management solutions to keep your environment clean and green.</p>
+
+    <div class="services">
+        <div class="service-card">
+            <img src="{% static 'Images/pickup-icon.webp' %}" alt="Pickup Service">
+            <h3>Waste Pickup</h3>
+            <p>Schedule a waste pickup at your convenience, and our team will collect it from your doorstep.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="{% static 'Images/tracking-icon.webp' %}" alt="Tracking Service">
+            <h3>Real-time Tracking</h3>
+            <p>Track the status of your scheduled pickups in real time and stay informed about waste disposal.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="{% static 'Images/recycling-icon.webp' %}" alt="Recycling Service">
+            <h3>Recycling Initiatives</h3>
+            <p>We ensure that recyclable waste is sent to appropriate facilities for a sustainable future.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

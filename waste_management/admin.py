@@ -5,3 +5,4 @@ from .models import WastePickup
 class WastePickupAdmin(admin.ModelAdmin):
     list_display = ('user', 'address', 'pickup_date', 'status')  
     list_filter = ('status',)  
+

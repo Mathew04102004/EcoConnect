@@ -12,9 +12,12 @@
 
     <form method="POST">
         {% csrf_token %}
-        
+
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="Choose a Username" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter Your Phone Number" pattern="[0-9]{10}" required>
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Choose a Password" required>

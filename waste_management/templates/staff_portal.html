@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="staff-portal-container">
+    <h2 class="staff-portal-heading">Welcome, {{ staff_name }} ({{ waste_type }} Waste Picker)</h2>
+    <p class="staff-contact">📞 Phone: {{ phone }}</p>
+
+    <h3 class="assigned-pickups-heading">Assigned Pickups</h3>
+    
+    <div class="staff-table-wrapper">
+        <table class="staff-data-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Phone No.</th>
+                    <th>Address</th>
+                    <th>Pickup Date</th>
+                    <th>Pickup Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pickup in assigned_pickups %}
+                <tr>
+                    <td>{{ pickup.user.username }}</td>
+                    <td>{{ pickup.phone_number }}</td>
+                    <td>{{ pickup.address }}</td>
+                    <td>{{ pickup.pickup_date }}</td>
+                    <td>{{ pickup.pickup_time }}</td>
+                    <td>
+                        <span class="status-badge {% if pickup.status == 'Scheduled' %}bg-primary
+                            {% elif pickup.status == 'Completed' %}bg-success
+                            {% elif pickup.status == 'Canceled' %}bg-danger
+                            {% else %}bg-secondary{% endif %}">
+                            {{ pickup.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="no-pickups-message">No pickups assigned.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="logout-btn-container">
+        <a href="{% url 'login' %}" class="staff-logout-btn">Logout</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="admin-portal-container">
+    <h2 class="admin-portal-heading">Admin Portal</h2>
+
+    <div class="admin-table-wrapper">
+        <table class="admin-data-table">
+            <thead class="admin-table-header">
+                <tr>
+                    <th>Username</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Pickup Date</th>
+                    <th>Pickup Time</th>
+                    <th>Waste Type</th>
+                    <th>Status</th>
+                    <th>Recycling Center</th>
+                    <th>Pickup Person</th> 
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pickup in pickups %}
+                <tr>
+                    <td>{{ pickup.user.username }}</td>
+                    <td>{{ pickup.phone_number }}</td>
+                    <td>{{ pickup.address }}</td>
+                    <td>{{ pickup.pickup_date }}</td>
+                    <td>{{ pickup.pickup_time }}</td>
+                    <td>{{ pickup.waste_type }}</td>
+                    <td>
+                        <span class="admin-status-badge {% if pickup.status == 'Scheduled' %}bg-primary
+                            {% elif pickup.status == 'Completed' %}bg-success
+                            {% elif pickup.status == 'Canceled' %}bg-danger
+                            {% else %}bg-secondary{% endif %}">
+                            {{ pickup.status }}
+                        </span>
+                    </td>
+                    <td>{{ pickup.recycling_center }}</td>
+                    <td>{{ pickup.picker_name }}</td> 
+                    <td>{{ pickup.picker_phone }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="8" class="admin-no-pickups">No pickups available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'login' %}" class="admin-logout-btn">Logout</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<section class="section">
+<div class="content-container">
     <h2>Contact Us</h2>
-    <form>
+    <p>Have any questions or need assistance? Reach out to us!</p>
+
+    <div class="contact-info">
+        <p><strong>📍 Address:</strong> 123 Green Street, EcoCity, Earth</p>
+        <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+        <p><strong>📧 Email:</strong> support@ecoconnect.com</p>
+    </div>
+
+    <form class="contact-form">
         <input type="text" placeholder="Your Name" required><br>
         <input type="email" placeholder="Your Email" required><br>
         <textarea placeholder="Your Message" required></textarea><br>
         <button type="submit">Send Message</button>
     </form>
-</section>
+</div>
 {% endblock %}

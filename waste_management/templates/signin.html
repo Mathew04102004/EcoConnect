@@ -1,30 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="login-container">
-        <h2>Welcome Back!</h2>
-        
+<div class="content-container">
+    <h2>Login Portal</h2>
 
-        <p>Join us in transforming waste into worth. Sign in to continue your journey with Eco Connect.</p>
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                {% if messages %}
-                {% for message in messages %}
-                    <p class="error-message">{{ message }}</p>
-                {% endfor %}
-            {% endif %}
-                <input type="text" id="username" name="username" placeholder="Username" required>
-            </div>
-            <div class="form-group">
-                <input type="password" id="password" name="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn primary">Sign In</button>
-            <p class="signup-link">Don't have an account? <a href="{% url 'create_account' %}">Sign Up</a></p>
-           
-        </form>
-        <div class="eco-message">
-            <p><strong>Every login makes a difference.</strong> Together, we can make the planet greener!</p>
-        </div>
-    </div>
+    {% if messages %}
+        {% for message in messages %}
+            <p class="error-message">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" action="{% url 'login_view' %}">
+        {% csrf_token %}
+        
+        <label for="role">Select Role:</label>
+        <select name="role" id="role" required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="staff">Staff</option>
+        </select>
+    </br>
+        <input type="text" name="username" placeholder="Username" required>
+</br>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="btn primary">Login</button>
+    </form>
+
+    <p class="signup-link">Don't have an account? <a href="{% url 'create_account' %}">Sign Up</a></p>
+</div>
 {% endblock %}

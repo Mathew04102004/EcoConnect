@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Select an option:</p>
+
+    <div class="dashboard-buttons">
+        <a href="{% url 'pickup_schedule' %}" class="btn btn-primary">📅 Schedule a Pickup</a>
+        <a href="{% url 'schedules' %}" class="btn btn-secondary">📋 View Scheduled Pickups</a>
+    </div>
+</div>
+{% endblock %}

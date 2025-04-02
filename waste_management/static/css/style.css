@@ -133,15 +133,31 @@ body {
     background: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     background: #2c3e50;
     color: white;
     text-align: center;
     padding: 10px;
+    padding-bottom: 0px;
 }
+
 .error-message {
     color: red;
     font-weight: bold;
@@ -152,3 +168,184 @@ footer {
     margin-bottom: 10px;
 }
 
+/* Dashboard Styling */
+.dashboard-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 25px;
+    background: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dashboard-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dashboard-buttons .btn {
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+}
+
+/* Schedule Table Styling */
+.schedules-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.schedule-table .pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+.schedule-table .completed {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Admin Portal Styling */
+.admin-portal-container {
+    max-width: 90%;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-portal-heading {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+.admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-data-table th, .admin-data-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.admin-table-header {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Status Badges */
+.admin-status-badge {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.bg-primary { background-color: #007bff !important; color: white; }
+.bg-success { background-color: #28a745 !important; color: white; }
+.bg-danger { background-color: #dc3545 !important; color: white; }
+.bg-secondary { background-color: #6c757d !important; color: white; }
+
+/* No Pickups Message */
+.admin-no-pickups {
+    font-style: italic;
+    color: gray;
+}
+
+/* Logout Button */
+.admin-logout-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.admin-logout-btn:hover {
+    background: #b52b3d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-portal-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .admin-data-table th, .admin-data-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .admin-portal-heading {
+        font-size: 24px;
+    }
+
+    .admin-logout-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
